@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
@@ -7,6 +8,7 @@ function ProductScreen() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const product = useSelector((state: StateType) => state.product);
+  const userInfo = useSelector((state: StateType) => state.auth.user);
   const [total, setTotal] = useState<number>(1);
   const changeTotal = (type: string) => {
     if (type === "plus") {
@@ -37,6 +39,17 @@ function ProductScreen() {
     slidesToScroll: product?.images?.length > 1 ? 2 : 1,
   };
 
+  const addToCart = () => {
+    const products = [{ id: product?.id, quantity: total }];
+    dispatch({
+      type: "@saga/addNewCart",
+      payload: {
+        userId: userInfo.id,
+        products: products,
+        image: product?.thumbnail
+      },
+    });
+  };
   return (
     <main>
       <div className="slider-area ">
@@ -104,9 +117,7 @@ function ProductScreen() {
                     <p>${product?.price}</p>
                   </div>
                   <div className="add_to_cart">
-                    <a href="#" className="btn_3">
-                      add to cart
-                    </a>
+                    <Button onClick={addToCart}>add to cart</Button>
                   </div>
                 </div>
               </div>

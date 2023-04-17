@@ -3,10 +3,12 @@ import { Stack, Button } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import { IMAGE } from "../assets";
 import { useDispatch, useSelector } from "react-redux";
+import openInNewTab from "../utils/openNewTab";
 
 function HomeScreen() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const userInfo = useSelector((state: StateType) => state.auth.user);
   const data = useSelector((state: StateType) => state.home.newArrivals);
   const newArrivals = data.slice(1, 4);
   const popularItems = data.slice(4, 10);
@@ -90,7 +92,7 @@ function HomeScreen() {
                 <div
                   className="col-xl-4 col-lg-4 col-md-6 col-sm-6"
                   key={index}
-                  onClick={() => navigate(`/product/${element?.id}`)}
+                  onClick={()=> navigate(`/product/${element?.id}`)}
                 >
                   <div className="single-new-pro mb-30 text-center cursor">
                     <div className="product-img">
@@ -98,7 +100,7 @@ function HomeScreen() {
                     </div>
                     <div className="product-caption">
                       <h3>
-                        <a href="product_details.html">{element?.title}</a>
+                        <a>{element?.title}</a>
                       </h3>
                       <span>$ {element?.price}</span>
                     </div>
@@ -164,7 +166,7 @@ function HomeScreen() {
                 <div
                   className="col-xl-4 col-lg-4 col-md-6 col-sm-6"
                   key={index}
-                  onClick={() => navigate(`/product/${element?.id}`)}
+                  onClick={()=> navigate(`/product/${element?.id}`)}
                 >
                   <div className="single-popular-items mb-50 text-center cursor">
                     <div className="popular-img">

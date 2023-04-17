@@ -2,11 +2,20 @@ import React from "react";
 import { IMAGE } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import checkAuth from "../utils";
+import { useDispatch } from "react-redux";
 
 function Header() {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const checkAuthNavigate = () =>{
     navigate(checkAuth() ? "/profile-screen" : "/login");
+  }
+
+  const clearCart = () =>{
+    dispatch({
+      type: "@saga/removeCart",
+      payload: null,
+    });
   }
   return (
     <header>
@@ -93,7 +102,7 @@ function Header() {
                     </a>
                   </li>
                   <li>
-                    <a href="cart.html">
+                  <a onClick={() => navigate('/cart')}>
                       <span className="flaticon-shopping-cart"></span>
                     </a>{" "}
                   </li>

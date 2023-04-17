@@ -23,6 +23,16 @@ declare type UserInfo = {
   image?: string,
   token?: string,
 }
+declare type CartItem = {
+    id: number,
+    title: string,
+    price: number,
+    quantity: number,
+    total: number,
+    discountPercentage: number,
+    discountedPrice: number,
+    image: string
+}
 declare type StateType = {
   home:{
     newArrivals: Array<Arrivals>;
@@ -33,5 +43,6 @@ declare type StateType = {
   },
   product:{
       [key: string]: any;
-  }
+  },
+  cart: any,
 };

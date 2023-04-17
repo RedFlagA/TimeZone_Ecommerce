@@ -2,10 +2,12 @@ import { all } from 'redux-saga/effects';
 import home from './home';
 import auth from './auth';
 import product from './product';
+import cart from './cart';
 const allSagas = [
   ...home,
   ...auth,
-  ...product
+  ...product,
+  ...cart
 ]
 export default function* rootSaga(){
   try {

@@ -7,12 +7,14 @@ import productSlice from "./productSlice";
 import rootSaga from "../sagas";
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import { persistReducer, persistStore } from "redux-persist";
+import cartSlice from "./cartSlice";
 
 
 const rootReducer = combineReducers({
   home: homeSlice,
   auth: authSlice,
-  product: productSlice
+  product: productSlice,
+  cart: cartSlice
 })
 
 const persistConfig = {

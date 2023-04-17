@@ -1,11 +1,10 @@
-import React from "react";
 import { useRoutes, Navigate } from "react-router-dom";
 import ErrorPage from "../screens/ErrrorPage";
 import HomeScreen from "../screens/Home";
 import ProfileScreen from "../screens/Profile";
 import ProductScreen from "../screens/Product";
 import LoginScreen from "../screens/Login";
-import checkAuth from "../utils";
+import CartList from "../screens/CartList";
 
 export function Routers() {
   const routes = useRoutes([
@@ -24,6 +23,10 @@ export function Routers() {
     {
       path: "/product/:id",
       element: <ProductScreen />,
+    },
+    {
+      path: "/cart",
+      element: <CartList />,
     },
     {
       path: "/login",
