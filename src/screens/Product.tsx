@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 
 function ProductScreen() {
@@ -138,7 +139,7 @@ function ProductScreen() {
                 </p>
                 <div className="subscribe_form">
                   <input type="email" placeholder="Enter your mail" />
-                  <a href="#" className="btn_1">
+                  <a href="/#" className="btn_1">
                     Subscribe
                   </a>
                 </div>

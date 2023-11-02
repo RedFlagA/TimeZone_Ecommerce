@@ -1,12 +1,7 @@
-import React, { useEffect } from "react";
-import checkAuth from "../utils";
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
 
 function CartList() {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const dataCart = useSelector((state: StateType) => state.cart.carts);
   return (
     <main>
@@ -44,7 +39,7 @@ function CartList() {
                   })}
                   <tr className="bottom_button">
                     <td>
-                      <a className="btn_1" href="#">
+                      <a className="btn_1" href="/#">
                         Update Cart
                       </a>
                     </td>
@@ -52,7 +47,7 @@ function CartList() {
                     <td></td>
                     <td>
                       <div className="cupon_text float-right">
-                        <a className="btn_1" href="#">
+                        <a className="btn_1" href="/#">
                           Close Coupon
                         </a>
                       </div>

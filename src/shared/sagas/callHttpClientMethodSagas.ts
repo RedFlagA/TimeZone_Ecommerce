@@ -1,4 +1,4 @@
-import { call, put, select } from "redux-saga/effects";
+import { call } from "redux-saga/effects";
 import { callHttpClientMethod } from "../../services/api/callHttpClient";
 
 /**
@@ -12,7 +12,7 @@ export function* callHttpClientMethodSagas(
   url: string,
   method: string,
   data?: any,
-  setting?: any,
+  setting?: any
 ): any {
   try {
     const response = yield call(
@@ -20,7 +20,7 @@ export function* callHttpClientMethodSagas(
       url,
       method,
       data,
-      setting,
+      setting
     );
     return response;
   } catch (error: any) {

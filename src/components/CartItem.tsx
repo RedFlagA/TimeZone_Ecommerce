@@ -15,10 +15,11 @@ const CartItem = ({ item }: Item) => {
       }
     }
   };
-  useEffect(()=>{
-     const totalPrice = quantity * item?.price
-     setTotal(totalPrice)
-  },[quantity])
+useEffect(() => {
+  const totalPrice = quantity * item?.price;
+  setTotal(totalPrice);
+}, [quantity, item?.price]);
+
   const onChangeQuantity = (event: any) => {
     setQuantity(event.target.value);
   };

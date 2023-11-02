@@ -1,14 +1,12 @@
-import React, { useEffect } from "react";
-import { Stack, Button } from "react-bootstrap";
-import { useNavigate, Link } from "react-router-dom";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { IMAGE } from "../assets";
 import { useDispatch, useSelector } from "react-redux";
-import openInNewTab from "../utils/openNewTab";
 
 function HomeScreen() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const userInfo = useSelector((state: StateType) => state.auth.user);
   const data = useSelector((state: StateType) => state.home.newArrivals);
   const newArrivals = data.slice(1, 4);
   const popularItems = data.slice(4, 10);
@@ -56,7 +54,7 @@ function HomeScreen() {
                       data-duration="2000ms"
                     >
                       <a href="industries.html" className="btn hero-btn">
-                        Shop Now
+                        Shop Now anhln
                       </a>
                     </div>
                   </div>
@@ -100,7 +98,7 @@ function HomeScreen() {
                     </div>
                     <div className="product-caption">
                       <h3>
-                        <a>{element?.title}</a>
+                        <a href="/#">{element?.title}</a>
                       </h3>
                       <span>$ {element?.price}</span>
                     </div>
@@ -219,7 +217,7 @@ function HomeScreen() {
           <div className="thumb-content-box">
             <div className="thumb-content">
               <h3>Next Video</h3>
-              <a href="#">
+              <a href="/#">
                 {" "}
                 <i className="flaticon-arrow"></i>
               </a>

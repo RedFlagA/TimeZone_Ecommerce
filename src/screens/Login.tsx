@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { redirect, useNavigate } from "react-router-dom";
-import checkAuth from "../utils";
+import { useNavigate } from "react-router-dom";
 
 function LoginScreen() {
   const [username, setUserName] = useState<string>("kminchelle");
@@ -63,7 +62,7 @@ function LoginScreen() {
                     There are advances being made in science and technology
                     everyday, and a good example of this is the
                   </p>
-                  <a href="#" className="btn_3">
+                  <a href="/#" className="btn_3">
                     Create an Account
                   </a>
                 </div>
@@ -111,7 +110,7 @@ function LoginScreen() {
                       >
                         log in
                       </button>
-                      <a className="lost_pass" href="#">
+                      <a className="lost_pass" href="/#">
                         forget password?
                       </a>
                     </div>

@@ -1,5 +1,4 @@
 import axios from "axios";
-
 const currentBaseUrl = "https://dummyjson.com/";
 let currentAccessToken: string | null = null;
 
@@ -24,7 +23,7 @@ httpClient.interceptors.response.use(
     } else {
       return Promise.reject(error);
     }
-  },
+  }
 );
 
 /**
