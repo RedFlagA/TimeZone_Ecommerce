@@ -56,7 +56,7 @@ function HomeScreen() {
                       data-duration="2000ms"
                     >
                       <a href="industries.html" className="btn hero-btn">
-                        Shop Now
+                        Shop Now anhln
                       </a>
                     </div>
                   </div>
